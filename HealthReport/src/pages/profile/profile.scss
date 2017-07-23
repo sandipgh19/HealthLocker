@@ -1,0 +1,30 @@
+page-profile {
+
+	ion-card{
+    margin: 3px !important;
+    width: calc(100% - 6px) !important;
+    .uploadWrap{
+        ion-icon{
+            color:#777;
+            font-size: 150px;
+            text-align: center !important;
+            display: block;
+        }
+    }
+    button{
+        height: 40px !important;
+    }
+}
+
+    .list {
+        
+        text-align: center !important;
+         
+    }
+
+    .text {
+
+        font-size:40px !important;
+    }
+
+}
