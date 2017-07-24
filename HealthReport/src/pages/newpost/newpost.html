@@ -1,0 +1,89 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>New Post</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+<ion-card>
+  <ion-card-header>
+    <div *ngIf="imageChosen == 0" class="uploadWrap">
+    <ion-icon (click)="chooseImage()" name="cloud-upload"></ion-icon>
+    </div>
+
+    <div *ngIf="imageChosen == 1" class="img-preview">
+      <img [src]="imagePath" alt="">
+    </div>
+    <ion-row>
+  <ion-col>
+<div *ngIf="imageslide == 1">
+<button ion-button class="register_button" (click)="secondImage()">Add Another</button>
+</div>
+</ion-col>
+</ion-row>
+<div *ngIf="second == 1">
+  <div *ngIf="imageChosen1 == 0" class="uploadWrap">
+    <ion-icon (click)="chooseImage1()" name="cloud-upload"></ion-icon>
+    </div>
+
+    <div *ngIf="imageChosen1 == 1" class="img-preview">
+      <img [src]="imagePath1" alt="">
+    </div>
+</div>
+ <ion-row>
+  <ion-col>
+<div *ngIf="imageslide1 == 1">
+<button ion-button class="register_button" (click)="thirdImage()">Add Another</button>
+</div>
+</ion-col>
+</ion-row>
+<div *ngIf="third == 1">
+  <div *ngIf="imageChosen2 == 0" class="uploadWrap">
+    <ion-icon (click)="chooseImage2()" name="cloud-upload"></ion-icon>
+    </div>
+
+    <div *ngIf="imageChosen2 == 1" class="img-preview">
+      <img [src]="imagePath2" alt="">
+    </div>
+</div>
+  </ion-card-header>
+
+
+  <ion-card-content>
+
+  
+    <ion-list>
+
+    <form [formGroup]="uploadForm">
+
+  <ion-item>
+    <ion-label floating>Title</ion-label>
+    <ion-input [(ngModel)]="postTitle" formControlName="title" type="text"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Description</ion-label>
+    <ion-input [(ngModel)]="desc" formControlName="desc" type="text" id="desc"></ion-input>
+  </ion-item>
+
+  <ion-item>
+   <button (click)="uploadPhoto()" [disabled]="!uploadForm.valid" ion-button full>Upload Image</button>
+  </ion-item>
+  
+</form>
+</ion-list>
+
+  </ion-card-content>
+
+</ion-card>
+
+
+
+
+</ion-content>
